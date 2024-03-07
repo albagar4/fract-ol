@@ -37,6 +37,7 @@ clean:
 	@$(MAKE) -C $(MINILIBX_DIR) clean
 
 fclean: clean
+	rm -f $(NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
