@@ -7,10 +7,10 @@ LIBFT_DIR = $(FT_PRINTF_DIR)/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 MINILIBX_DIR = include/minilibx
 MINILIBX = $(MINILIBX_DIR)/libmlx_Linux.a
-MLXFLAG = -L $(MINILIBX_DIR) -lmlx -lXext -lX11
+MLXFLAG = -L $(MINILIBX_DIR) -lmlx -lXext -lX11 -lm
 INCLUDES = -I . -I include -I $(LIBFT_DIR) -I $(FT_PRINTF_DIR) -I $(MINILIBX_DIR)
 
-FRACTOL_SRCS = src/main.c
+FRACTOL_SRCS = src/main.c src/mandelbrot.c
 FRACTOL_OBJS = $(FRACTOL_SRCS:.c=.o)
 
 all: $(NAME)
