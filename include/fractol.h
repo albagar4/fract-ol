@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albagar4 <albagar4@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/08 16:01:24 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:06:20 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/ft_printf.h"
-#include "minilibx/mlx.h"
+// #include "minilibx_linux/mlx.h"
+#include "minilibx_mac/mlx.h"
 #include <math.h>
+
 
 #define WINDOW_WIDTH 750
 #define WINDOW_HEIGHT 450

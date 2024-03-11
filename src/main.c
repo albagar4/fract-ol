@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albagar4 <albagar4@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/08 16:01:19 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:12:01 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	ft_close(int keysym, t_fractal *data)
 {
-	if (keysym == XK_Escape)
-		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	// if (keysym == XK_Escape)
+		// mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	(void)data;
+	printf("KeyCode: %d\n", keysym);
 	return (0);
 }
 
@@ -28,7 +30,7 @@ int	main(void)
 		return (MLX_ERROR);
 	data.win_ptr =mlx_new_window(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "mandelbrot");
 	mandelbrot(&data, WINDOW_WIDTH, WINDOW_HEIGHT);
-	mlx_key_hook(data.mlx_ptr, &ft_close, &data);
+	mlx_key_hook(data.win_ptr, &ft_close, &data);
 	mlx_loop(data.mlx_ptr);
 	return (0);
 }
