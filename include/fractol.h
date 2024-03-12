@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 18:47:43 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:31:21 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <math.h>
 
 
-#define WINDOW_WIDTH 750
-#define WINDOW_HEIGHT 450
+#define WIDTH 750
+#define HEIGHT 450
 #define ZOOM 225
 #define MLX_ERROR 1
 
@@ -43,6 +43,7 @@ typedef struct s_comp
 	double	y;
 }	t_comp;
 
+void	init_window(t_fractal *data, t_img *img);
 void	mandelbrot(t_fractal *data, t_img *img, int width, int height);
 int		sucesion(double coords_x, double coords_y);
 int		ft_close(int keysym, t_fractal *data);
