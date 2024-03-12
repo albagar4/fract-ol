@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 18:28:43 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:47:43 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef struct s_fractal
 
 typedef struct s_comp
 {
-	int	x;
-	int	y;
+	double	x;
+	double	y;
 }	t_comp;
 
 void	mandelbrot(t_fractal *data, t_img *img, int width, int height);

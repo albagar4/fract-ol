@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 18:30:08 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:38:51 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	sucesion(double coords_x, double coords_y)
 		temp = z.x;
 		z.x = pow(z.x, 2) - pow(z.y, 2) + c.x;
 		z.y = 2 * temp * z.y + c.y;
-		if (pow(z.x, 2) + pow(z.y, 2) > 4)
+		if (pow(z.x, 2) + pow(z.y, 2) > INT32_MAX)
 			break ;
 		count++;
 	}
