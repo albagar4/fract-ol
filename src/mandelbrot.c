@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 18:38:51 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:52:40 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	mandelbrot(t_fractal *data, t_img *img, int width, int height)
 			if (result == 100)
 				img_pixel_put(img, coord.x, coord.y, 0xFFFFFF);
 			else
-				img_pixel_put(img, coord.x, coord.y, 0xFCBE11);
+				img_pixel_put(img, coord.x, coord.y, 0x000000);
 			coord.y++;
 		}
 		coord.x++;

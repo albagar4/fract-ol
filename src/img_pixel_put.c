@@ -6,16 +6,24 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:31:23 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 18:27:30 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:51:41 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+// void	img_pixel_put(t_img *img, int x, int y, int color)
+// {
+// 	int	*pixel;
+
+// 	pixel = img->addr;
+// 	pixel[(y * img->line_len / 4) + x] = color;
+// }
+
 void	img_pixel_put(t_img *img, int x, int y, int color)
 {
 	int	*pixel;
 
-	pixel = img->addr;
-	pixel[(y * img->line_len / 4) + x] = color;
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*pixel = color;
 }
