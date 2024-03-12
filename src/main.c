@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 19:28:58 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:54:52 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(void)
 	init_window(&data, &img);
 	mandelbrot(&data, &img, WIDTH, HEIGHT);
 	mlx_key_hook(data.win_ptr, &ft_close, &data);
+	ft_leaks();
 	mlx_loop(data.mlx_ptr);
 	return (0);
 }
