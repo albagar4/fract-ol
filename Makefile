@@ -18,7 +18,7 @@ MLX_PATH = $(MINILIBX_MAC_PATH)
 endif
 INCLUDES = -I . -I include -I $(LIBFT_DIR) -I $(FT_PRINTF_DIR) -I $(MLX_PATH)
 
-FRACTOL_SRCS = src/main.c src/mandelbrot.c
+FRACTOL_SRCS = src/main.c src/mandelbrot.c src/img_pixel_put.c
 FRACTOL_OBJS = $(FRACTOL_SRCS:.c=.o)
 
 all: $(NAME)

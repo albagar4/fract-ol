@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albagar4 <albagar4@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/08 15:16:53 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:30:08 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	sucesion(double coords_x, double coords_y)
 	return (count);
 }
 
-void	mandelbrot(t_fractal *data, int width, int height)
+void	mandelbrot(t_fractal *data, t_img *img, int width, int height)
 {
 	t_comp	coord;
 	int		result;
@@ -49,11 +49,12 @@ void	mandelbrot(t_fractal *data, int width, int height)
 		{
 			result = sucesion(coord.x, coord.y);
 			if (result == 100)
-				mlx_pixel_put(data->mlx_ptr, data->win_ptr, coord.x, coord.y, 0x000000);
+				img_pixel_put(img, coord.x, coord.y, 0xFFFFFF);
 			else
-				mlx_pixel_put(data->mlx_ptr, data->win_ptr, coord.x, coord.y, 0xFFFFFF);
+				img_pixel_put(img, coord.x, coord.y, 0xFCBE11);
 			coord.y++;
 		}
 		coord.x++;
 	}
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, img->mlx_img, 0, 0);
 }
