@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 19:54:52 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:28:33 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	init_window(t_fractal *data, t_img *img)
 		free(data->win_ptr);
 		exit(0);
 	}
-	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_len, &img->endian);
+	img->addr = mlx_get_data_addr(img->mlx_img,
+			&img->bpp, &img->line_len, &img->endian);
 }
 
 int	main(void)
@@ -43,9 +44,11 @@ int	main(void)
 	t_fractal	data;
 	t_img		img;
 
+	data.zoom = 250;
 	init_window(&data, &img);
-	mandelbrot(&data, &img, WIDTH, HEIGHT);
 	mlx_key_hook(data.win_ptr, &ft_close, &data);
+	mlx_mouse_hook(data.win_ptr, &ft_mouse_action, &data);
+	mandelbrot(&data, &img, WIDTH, HEIGHT);
 	ft_leaks();
 	mlx_loop(data.mlx_ptr);
 	return (0);

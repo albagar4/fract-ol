@@ -6,13 +6,13 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 19:04:30 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:25:31 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	sucesion(double coords_x, double coords_y)
+int	sucesion(double coords_x, double coords_y, int zoom)
 {
 	t_comp	z;
 	t_comp	c;
@@ -21,8 +21,8 @@ int	sucesion(double coords_x, double coords_y)
 
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = coords_x / ZOOM - 1.85;
-	c.y = coords_y / ZOOM - 1;
+	c.x = coords_x / zoom - 1.85;
+	c.y = coords_y / zoom - 1;
 	count = 0;
 	while (count < 100)
 	{
@@ -42,13 +42,14 @@ void	mandelbrot(t_fractal *data, t_img *img, int width, int height)
 	int		result;
 	int		color;
 
+	printf("me estoy metiendo aqui\n");
 	coord.x = 0.0;
 	while (coord.x != width)
 	{
 		coord.y = 0.0;
 		while (coord.y != height)
 		{
-			result = sucesion(coord.x, coord.y);
+			result = sucesion(coord.x, coord.y, data->zoom);
 			if (result == 100)
 				img_pixel_put(img, coord.x, coord.y, 0x000000);
 			else

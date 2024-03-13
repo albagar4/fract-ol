@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/12 19:55:17 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:05:45 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 
 #define WIDTH 750
 #define HEIGHT 450
-#define ZOOM 225
 #define MLX_ERROR 1
+
+// MOUSE KEYS
+#define SCROLL_UP 5
+#define SCROLL_DOWN 4
 
 typedef struct s_img
 {
@@ -34,6 +37,7 @@ typedef struct s_fractal
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	int		zoom;
 	t_img	img;
 }	t_fractal;
 
@@ -45,6 +49,7 @@ typedef struct s_comp
 
 void	init_window(t_fractal *data, t_img *img);
 void	mandelbrot(t_fractal *data, t_img *img, int width, int height);
-int		sucesion(double coords_x, double coords_y);
+int		sucesion(double coords_x, double coords_y, int zoom);
+int		ft_mouse_action(int keysym, int x, int y, t_fractal *coord);
 int		ft_close(int keysym, t_fractal *data);
 void	img_pixel_put(t_img *img, int x, int y, int color);
