@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 18:14:02 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:25:54 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <math.h>
 #include <stdint.h>
 
-#define WIDTH 750
-#define HEIGHT 450
+#define WIDTH 900
+#define HEIGHT 500
 #define MLX_ERROR 1
 
 // MOUSE KEYS
@@ -42,6 +42,7 @@ typedef struct s_fractal
 	double	ords_y;
 	double	julia_x;
 	double	julia_y;
+	int		color;
 	char	*name;
 	t_img	img;
 }	t_fractal;

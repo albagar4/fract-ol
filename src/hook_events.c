@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:11:39 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 18:14:35 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:26:09 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_close(t_fractal *data)
 {
-	// mlx_destroy_image(data->win_ptr, img->mlx_img);
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	free(data->mlx_ptr);
 	exit(0);
-	// printf("KeyCode: %d\n", keysym);
 	return (0);
 }
 
@@ -34,18 +32,22 @@ int	ft_key_actions(int keysym, t_fractal *data)
 		data->ords_x *= 1.1;
 	if (keysym == 53)
 		ft_close(data);
+	if (keysym == 8)
+		data->color += 1000;
+	if (keysym == 15)
+		preset_fractal(data, data->name);
 	select_fractal(data);
 	return (0);
 }
 
-int	ft_mouse_action(int keysym, int x, int y, t_fractal *fractal)
+int	ft_mouse_action(int keysym, int x, int y, t_fractal *data)
 {
 	(void)x;
 	(void)y;
 	if (keysym == SCROLL_UP)
-		fractal->zoom *= 1.5;
+		data->zoom *= 1.5;
 	else if (keysym == SCROLL_DOWN)
-		fractal->zoom *= 0.5;
-	select_fractal(fractal);
+		data->zoom *= 0.5;
+	select_fractal(data);
 	return (0);
 }
