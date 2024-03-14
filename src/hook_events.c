@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:11:39 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 14:45:28 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 14:49:44 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	ft_close(t_fractal *data)
 int	ft_key_actions(int keysym, t_fractal *data)
 {
 	if (keysym == 126 || keysym == 13)
-		data->ords_y += 0.1;
+		data->ords_y *= 1.1;
 	if (keysym == 125 || keysym == 1)
-		data->ords_y -= 0.1;
+		data->ords_y *= 0.9;
 	if (keysym == 124 || keysym == 2)
-		data->ords_x -= 0.1;
+		data->ords_x *= 0.9;
 	if (keysym == 123 || keysym == 0)
-		data->ords_x += 0.1;
+		data->ords_x *= 1.1;
 	if (keysym == 53)
 		ft_close(data);
 	mandelbrot(data, &data->img, WIDTH, HEIGHT);
