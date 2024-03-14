@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albagar4 <albagar4@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/13 17:28:33 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:01:00 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	init_window(t_fractal *data, t_img *img)
 int	main(void)
 {
 	t_fractal	data;
-	t_img		img;
+	// t_img		img;
 
 	data.zoom = 250;
-	init_window(&data, &img);
+	init_window(&data, &data.img);
 	mlx_key_hook(data.win_ptr, &ft_close, &data);
-	mlx_mouse_hook(data.win_ptr, &ft_mouse_action, &data);
-	mandelbrot(&data, &img, WIDTH, HEIGHT);
+	mlx_mouse_hook(data.win_ptr, ft_mouse_action, &data);
+	mandelbrot(&data, &data.img, WIDTH, HEIGHT);
 	ft_leaks();
 	mlx_loop(data.mlx_ptr);
 	return (0);
