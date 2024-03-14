@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:11:39 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 15:21:13 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:14:35 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_key_actions(int keysym, t_fractal *data)
 		data->ords_x *= 1.1;
 	if (keysym == 53)
 		ft_close(data);
-	julia(data, &data->img, WIDTH, HEIGHT);
+	select_fractal(data);
 	return (0);
 }
 
@@ -46,6 +46,6 @@ int	ft_mouse_action(int keysym, int x, int y, t_fractal *fractal)
 		fractal->zoom *= 1.5;
 	else if (keysym == SCROLL_DOWN)
 		fractal->zoom *= 0.5;
-	julia(fractal, &fractal->img, WIDTH, HEIGHT);
+	select_fractal(fractal);
 	return (0);
 }

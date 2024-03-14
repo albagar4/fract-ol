@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 15:07:50 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:14:02 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct s_fractal
 	double	zoom;
 	double	ords_x;
 	double	ords_y;
+	double	julia_x;
+	double	julia_y;
 	char	*name;
 	t_img	img;
 }	t_fractal;
@@ -50,6 +52,8 @@ typedef struct s_comp
 	double	y;
 }	t_comp;
 
+// Main
+void	select_fractal(t_fractal *data);
 // Preset fractol
 void	preset_fractal(t_fractal *data, char *fractal_name);
 void	init_window(t_fractal *data, t_img *img);
@@ -65,3 +69,4 @@ int		ft_mouse_action(int keysym, int x, int y, t_fractal *fractal);
 int		ft_close(t_fractal *data);
 // Utils
 void	img_pixel_put(t_img *img, int x, int y, int color);
+void	assign_constants(t_fractal *data, char *nbr);

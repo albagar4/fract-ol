@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:36:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 17:09:33 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:25:20 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	julia_sucesion(double coords_x, double coords_y, t_fractal *data)
 	int		count;
 	double	temp;
 
-	c.x = random_c();
-	c.y = random_c();
+	c.x = data->julia_x;
+	c.y = data->julia_y;
 	z.x = coords_x / data->zoom - data->ords_x;
 	z.y = coords_y / data->zoom - data->ords_y;
 	count = 0;
@@ -29,7 +29,7 @@ int	julia_sucesion(double coords_x, double coords_y, t_fractal *data)
 		temp = z.x;
 		z.x = pow(z.x, 2) - pow(z.y, 2) + c.x;
 		z.y = 2 * temp * z.y + c.y;
-		if (pow(z.x, 2) + pow(z.y, 2) > __DBL_MAX__)
+		if (pow(z.x, 2) + pow(z.y, 2) > INT32_MAX)
 			break ;
 		count++;
 	}
