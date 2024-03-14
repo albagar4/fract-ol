@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 14:39:21 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 15:08:38 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(void)
 	init_window(&data, &data.img);
 	mlx_key_hook(data.win_ptr, &ft_key_actions, &data);
 	mlx_mouse_hook(data.win_ptr, ft_mouse_action, &data);
-	mandelbrot(&data, &data.img, WIDTH, HEIGHT);
+	// mandelbrot(&data, &data.img, WIDTH, HEIGHT);
+	julia(&data, &data.img, WIDTH, HEIGHT);
 	ft_leaks();
 	mlx_loop(data.mlx_ptr);
 	return (0);

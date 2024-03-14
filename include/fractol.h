@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 14:39:44 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 15:07:50 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ void	preset_fractal(t_fractal *data, char *fractal_name);
 void	init_window(t_fractal *data, t_img *img);
 // Mandelbrot
 void	mandelbrot(t_fractal *data, t_img *img, int width, int height);
-int		sucesion(double coords_x, double coords_y, t_fractal *data);
+int		mandel_sucesion(double coords_x, double coords_y, t_fractal *data);
+// Julia
+int		julia_sucesion(double coords_x, double coords_y, t_fractal *data);
+void	julia(t_fractal *data, t_img *img, int width, int height);
 // Key and mouse actions
 int		ft_key_actions(int keysym, t_fractal *data);
 int		ft_mouse_action(int keysym, int x, int y, t_fractal *fractal);

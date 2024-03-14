@@ -6,13 +6,13 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 14:26:30 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/14 14:55:51 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	sucesion(double coords_x, double coords_y, t_fractal *data)
+int	mandel_sucesion(double coords_x, double coords_y, t_fractal *data)
 {
 	t_comp	z;
 	t_comp	c;
@@ -48,7 +48,7 @@ void	mandelbrot(t_fractal *data, t_img *img, int width, int height)
 		coord.y = 0.0;
 		while (coord.y != height)
 		{
-			result = sucesion(coord.x, coord.y, data);
+			result = mandel_sucesion(coord.x, coord.y, data);
 			if (result == 100)
 				img_pixel_put(img, coord.x, coord.y, 0x000000);
 			else
