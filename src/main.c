@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:46:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 18:36:34 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:46:12 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ void	select_fractal(t_fractal *data)
 		julia(data, &data->img, WIDTH, HEIGHT);
 	else if (!ft_strncmp(data->name, "mandelbrot", 10))
 		mandelbrot(data, &data->img, WIDTH, HEIGHT);
+	else if (!ft_strncmp(data->name, "burning_ship", 12))
+		burning_ship(data, &data->img, WIDTH, HEIGHT);
 	else
 	{
-		ft_putendl_fd("Usage : ./fractol <fractal> <1-3 (just julia)>", 1);
-		ft_putendl_fd("Fractal options : mandelbrot julia", 1);
+		ft_putendl_fd("Usage: ./fractol <fractal> <1-3 (just julia)>", 1);
+		ft_putendl_fd("Fractal options: mandelbrot julia burning_ship", 1);
 		exit(0);
 	}
 }
@@ -36,8 +38,8 @@ int	main(int argc, char *argv[])
 			assign_constants(&data, argv[2]);
 		else
 		{
-			ft_putendl_fd("Usage : ./fractol <fractal> <1-3 (just julia)>", 1);
-			ft_putendl_fd("Fractal options : mandelbrot julia", 1);
+			ft_putendl_fd("Usage: ./fractol <fractal> <1-3 (just julia)>", 1);
+			ft_putendl_fd("Fractal options: mandelbrot julia burning_ship", 1);
 			return (0);
 		}
 	}

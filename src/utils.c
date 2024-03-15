@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:31:23 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 18:38:20 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:42:22 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	assign_constants(t_fractal *data, char *nbr)
 	}
 	else
 	{
-		ft_putendl_fd("Usage : ./fractol <fractal> <1-3 (just julia)>", 1);
-		ft_putendl_fd("Fractal options : mandelbrot julia", 1);
+		ft_putendl_fd("Usage: ./fractol <fractal> <1-3 (just julia)>", 1);
+		ft_putendl_fd("Fractal options: mandelbrot julia burning_ship", 1);
 		exit(0);
 	}
 }

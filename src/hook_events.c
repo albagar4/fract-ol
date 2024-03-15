@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:11:39 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 19:26:09 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:13:17 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,32 @@ int	ft_key_actions(int keysym, t_fractal *data)
 	return (0);
 }
 
+void	ft_zoom(t_fractal *data, int x, int y, int nbr)
+{
+	double	zoom_scale;
+
+	zoom_scale = 1.5;
+	if (nbr == 1)
+	{
+		data->ords_x = (x / data->zoom + data->ords_x) - (x / (data->zoom * zoom_scale));
+		data->ords_y = (y / data->zoom + data->ords_y) - (y / (data->zoom * zoom_scale));
+		data->zoom *= zoom_scale;
+	}
+	else if (nbr == -1)
+	{
+		data->ords_x = (x / data->zoom + data->ords_x) - (x / (data->zoom / zoom_scale));
+		data->ords_y = (y / data->zoom + data->ords_y) - (y / (data->zoom / zoom_scale));
+		data->zoom /= zoom_scale;
+	}
+	return ;
+}
+
 int	ft_mouse_action(int keysym, int x, int y, t_fractal *data)
 {
-	(void)x;
-	(void)y;
 	if (keysym == SCROLL_UP)
-		data->zoom *= 1.5;
+		ft_zoom(data, x, y, 1);
 	else if (keysym == SCROLL_DOWN)
-		data->zoom *= 0.5;
+		ft_zoom(data, x, y, -1);
 	select_fractal(data);
 	return (0);
 }
