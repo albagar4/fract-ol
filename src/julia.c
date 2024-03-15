@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:36:35 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/14 18:47:07 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:33:35 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	julia_sucesion(double coords_x, double coords_y, t_fractal *data)
 
 	c.x = data->julia_x;
 	c.y = data->julia_y;
-	z.x = coords_x / data->zoom - data->ords_x;
-	z.y = coords_y / data->zoom - data->ords_y;
+	z.x = coords_x / data->zoom + data->ords_x;
+	z.y = coords_y / data->zoom + data->ords_y;
 	count = 0;
 	while (count < 75)
 	{

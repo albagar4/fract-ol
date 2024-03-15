@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:55:26 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/15 13:23:05 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:25:02 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	mandel_sucesion(double coords_x, double coords_y, t_fractal *data)
 
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = coords_x / data->zoom - data->ords_x;
-	c.y = coords_y / data->zoom - data->ords_y;
+	c.x = coords_x / data->zoom + data->ords_x;
+	c.y = coords_y / data->zoom + data->ords_y;
 	count = 0;
 	while (count < 100)
 	{

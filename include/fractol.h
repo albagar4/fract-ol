@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:47:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/15 13:16:06 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:16:15 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ typedef struct s_fractal
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	int		x;
-	int		y;
 	double	zoom;
 	double	ords_x;
 	double	ords_y;
