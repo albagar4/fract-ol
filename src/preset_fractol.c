@@ -6,7 +6,7 @@
 /*   By: albagar4 <albagar4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:18:19 by albagar4          #+#    #+#             */
-/*   Updated: 2024/03/15 15:48:57 by albagar4         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:40:17 by albagar4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	preset_fractal(t_fractal *data, char *fractal_name)
 	data->ords_y = -1.5;
 	data->zoom = 250;
 	data->color = 0xFCBE11;
+	data->julia_x = -0.4;
+	data->julia_y = 0.6;
 	data->name = fractal_name;
 }
 
